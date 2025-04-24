@@ -5,6 +5,7 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #fbf7f2;
   color: #333;
+  /* body flex 레이아웃은 유지하되, main flex:1 은 빼줍니다 */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -16,34 +17,23 @@ header {
   text-align: center;
   padding: 1.5rem;
 }
-
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-header p {
-  margin: 0.5rem 0 0;
-}
+header h1 { margin: 0; font-size: 2rem; }
+header p  { margin: 0.5rem 0 0; }
 
 main {
-  flex: 1;
+  /* flex: 1; 삭제 → 콘텐츠 높이에 따라 자연스럽게 늘어납니다. */
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 2rem auto 4rem;    /* 아래에 4rem 여백 확보 */
   background: #fff;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-
-  /* 아래 섹션과 겹치지 않도록 여백 추가 */
-  margin-bottom: 4rem;
 }
 
 .steps {
   list-style: decimal inside;
   padding-left: 0;
 }
-
 .steps li {
   margin-bottom: 1rem;
   line-height: 1.6;
@@ -60,23 +50,16 @@ main {
   font-weight: 700;
   transition: background 0.2s ease;
 }
-
 .btn:hover {
   background-color: #6a130f;
 }
 
 .dog-section {
-  position: relative;          /* 자식 absolute 배치 기준 */
-  clear: both;                 /* 혹시 float 처리된 요소가 있어도 아래로 배치 */
-  margin-top: 4rem;            /* 데스크탑 기본 여백 */
-  height: 300px;               /* 필요에 따라 조정 */
-  background-image: url("images/KakaoTalk_Photo_2025-04-24-20-27-35.jpg");
-  background-size: contain;    /* 사진 전체 보이도록 */
-  background-repeat: no-repeat;
-  background-position: center center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;          /* .dog-text 의 absolute 기준 */
+  margin-top: 4rem;            /* 데스크탑 기본 위쪽 여백 */
+  height: 300px;               /* 섹션 높이 */
+  background: url("images/KakaoTalk_Photo_2025-04-24-20-27-35.jpg")
+              center center / contain no-repeat;
 }
 
 .dog-text {
@@ -84,7 +67,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;                  /* 배경보다 위에 */
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 1rem 2rem;
@@ -95,13 +78,14 @@ main {
 }
 
 footer {
+  margin-top: auto;            /* 남는 공간을 채워서 바닥에 고정 */
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
   color: #666;
 }
 
-/* 모바일(가로폭 600px 이하)에서 margin-top 늘리기 */
+/* 모바일 전용: 위쪽 여백 더 확보 */
 @media (max-width: 600px) {
   .dog-section {
     margin-top: 8rem;
