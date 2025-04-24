@@ -1,4 +1,4 @@
-<!-- style.css -->
+/* style.css */
 body {
   margin: 0;
   padding: 0;
@@ -34,6 +34,9 @@ main {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  /* 아래 섹션과 겹치지 않도록 여백 추가 */
+  margin-bottom: 4rem;
 }
 
 .steps {
@@ -62,35 +65,26 @@ main {
   background-color: #6a130f;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  color: #666;
-}
-/* style.css */
-
 .dog-section {
-  height: 300px;              /* 필요에 따라 조정 */
-  background-image: url("images/KakaoTalk_Photo_2025-04-24-20-27-35.jpg"); /* 실제 이미지 경로로 변경 */
-  background-size: contain;
-  background-position: center center;
+  position: relative;          /* 자식 absolute 배치 기준 */
+  clear: both;                 /* 혹시 float 처리된 요소가 있어도 아래로 배치 */
+  margin-top: 4rem;            /* 데스크탑 기본 여백 */
+  height: 300px;               /* 필요에 따라 조정 */
+  background-image: url("images/KakaoTalk_Photo_2025-04-24-20-27-35.jpg");
+  background-size: contain;    /* 사진 전체 보이도록 */
   background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
 }
 
 .dog-text {
-  position: relative;
-  clear: both;              /* float 요소가 있을 경우에도 아래로 내려줌 */
-  margin-top: 8rem; 
-  position: absolute;           /* 추가 */
-  top: 50%;                     /* 수직 중앙 */
-  left: 50%;                    /* 수평 중앙 */
+  position: absolute;          /* 사진 위에 오버레이 */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;                   /* 배경보다 위로 */
+  z-index: 1;                  /* 배경보다 위에 */
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 1rem 2rem;
@@ -98,4 +92,18 @@ footer {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 모바일(가로폭 600px 이하)에서 margin-top 늘리기 */
+@media (max-width: 600px) {
+  .dog-section {
+    margin-top: 8rem;
+  }
 }
