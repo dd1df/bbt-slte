@@ -68,3 +68,34 @@ footer {
   font-size: 0.9rem;
   color: #666;
 }
+/* style.css */
+
+.dog-section {
+  height: 300px;              /* 필요에 따라 조정 */
+  background-image: url("images/KakaoTalk_Photo_2025-04-24-20-27-35.jpg"); /* 실제 이미지 경로로 변경 */
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.dog-text {
+  position: relative;
+  clear: both;              /* float 요소가 있을 경우에도 아래로 내려줌 */
+  margin-top: 8rem; 
+  position: absolute;           /* 추가 */
+  top: 50%;                     /* 수직 중앙 */
+  left: 50%;                    /* 수평 중앙 */
+  transform: translate(-50%, -50%);
+  z-index: 1;                   /* 배경보다 위로 */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
