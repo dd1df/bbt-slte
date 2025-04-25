@@ -5,7 +5,6 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #fbf7f2;
   color: #333;
-  /* body flex 레이아웃은 유지하되, main flex:1 은 빼줍니다 */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -17,13 +16,17 @@ header {
   text-align: center;
   padding: 1.5rem;
 }
-header h1 { margin: 0; font-size: 2rem; }
-header p  { margin: 0.5rem 0 0; }
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+header p {
+  margin: 0.5rem 0 0;
+}
 
 main {
-  /* flex: 1; 삭제 → 콘텐츠 높이에 따라 자연스럽게 늘어납니다. */
   max-width: 600px;
-  margin: 2rem auto 4rem;    /* 아래에 4rem 여백 확보 */
+  margin: 2rem auto 0;      /* 위 2rem, 아래 0 */
   background: #fff;
   padding: 1.5rem;
   border-radius: 8px;
@@ -54,16 +57,21 @@ main {
   background-color: #6a130f;
 }
 
-.dog-section {
-  position: relative;          /* .dog-text 의 absolute 기준 */
-  margin-top: 4rem;            /* 데스크탑 기본 위쪽 여백 */
-  height: 300px;               /* 섹션 높이 */
-  background: url("images/KakaoTalk_Photo_2025-04-24-20-27-35.jpg")
-              center center / contain no-repeat;
+.dog-container {
+  position: relative;        /* .dog-text 절대위치 기준 */
+  max-width: 600px;
+  margin: 4rem auto 4rem;    /* 위·아래 4rem 여백 */
+}
+
+.dog-img {
+  display: block;            /* inline 공백 제거 */
+  width: 100%;
+  height: auto;              /* 원본 비율 유지 */
+  border-radius: 8px;
 }
 
 .dog-text {
-  position: absolute;          /* 사진 위에 오버레이 */
+  position: absolute;        /* 이미지 위 오버레이 */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -78,16 +86,15 @@ main {
 }
 
 footer {
-  margin-top: auto;            /* 남는 공간을 채워서 바닥에 고정 */
+  margin-top: auto;          /* 남는 공간 채워 하단 고정 */
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
   color: #666;
 }
 
-/* 모바일 전용: 위쪽 여백 더 확보 */
 @media (max-width: 600px) {
-  .dog-section {
-    margin-top: 8rem;
+  .dog-container {
+    margin: 6rem auto 4rem;  /* 모바일에서 위쪽 여백 추가 */
   }
 }
