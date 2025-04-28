@@ -70,20 +70,6 @@ main {
   border-radius: 8px;
 }
 
-.dog-text {
-  position: absolute;        /* 이미지 위 오버레이 */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-}
 
 footer {
   margin-top: auto;          /* 남는 공간 채워 하단 고정 */
