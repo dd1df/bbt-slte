@@ -1,54 +1,172 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>우리 고깃집 안내</title>
-  <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대복갈비 효성점 리뷰 이벤트</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    <style>
+        :root {
+            --primary-color: #D32F2F; /* 식욕을 돋우는 딥 레드 */
+            --accent-color: #FFEBEE;
+            --text-color: #333333;
+            --bg-color: #F9F9F9;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            margin-top: 0.5rem;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: -20px auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+        }
+
+        .step-num {
+            background-color: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .highlight {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* 버튼 호버/터치 효과 */
+        .cta-button:active, .cta-button:hover {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+        }
+
+        .reward-box {
+            background-color: #FFF3E0;
+            border: 1px solid #FFCC80;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .footer-img {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 1rem;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>🍖 대복갈비 효성점에 <br>오신 걸 환영합니다!</h1>
-    <p>아래 순서대로 진행해 주세요 😊</p>
-  </header>
 
-  <main>
-    <ol class="steps">
-      <li>직원을 불러 영수증을 받아주세요! 😊</li>
-      <li>
-        영수증을 받으셨다면 버튼을 눌러주세요! 😊
-        <a
-          href="https://m.place.naver.com/my/checkin"
-          target="_blank"
-          class="btn"
-          >링크 클릭하기</a
-        >
-      </li>
-      <li>링크에서 영수증을 터치 후 카메라로 영수증을 찍어주세요! 😊</li>
-      <li>
-        후에 나오는 리뷰를 순서대로 작성해주세요! 😊<br />
-        예쁜 말씀 한 문장은 저희 가게에 큰 도움이 <br>됩니다!
-      </li>
-      <li>작성 후 보여주시고 주류/음료/후식냉면 중 선택하시면 서비스로 드립니다! 😊</li>
-    </ol>
-  </main>
+    <header class="header">
+        <h1>🍖 대복갈비 효성점</h1>
+        <p>방문해 주셔서 감사합니다!<br>리뷰 남기시고 서비스 받아가세요 😊</p>
+    </header>
 
-  <!-- 변경된 강아지 섹션 -->
-  <section class="dog-container">
-    <img
-      src="images/mydog31.jpg"
-      alt="우리집 강아지"
-      class="dog-img"
-    />
+    <div class="container">
+        <div class="card">
+            <div class="step">
+                <span class="step-num">1</span>
+                <div>직원에게 <span class="highlight">영수증</span>을 요청해 주세요.</div>
+            </div>
+            
+            <div class="step">
+                <span class="step-num">2</span>
+                <div>아래 <strong>버튼을 눌러</strong> 네이버 플레이스로 이동합니다.</div>
+            </div>
 
-  </section>
+            <a href="https://m.place.naver.com/my/checkin" class="cta-button">👉 영수증 인증하고 리뷰 쓰기</a>
 
-  <footer>
-    <p>&copy; 감사합니다!</p>
-  </footer>
+            <div class="step">
+                <span class="step-num">3</span>
+                <div><strong>'나도 참여'</strong> 버튼을 누르고 영수증을 찍어주세요.</div>
+            </div>
+
+            <div class="step">
+                <span class="step-num">4</span>
+                <div>맛있는 갈비 사진과 함께 <span class="highlight">따뜻한 리뷰</span>를 남겨주세요!</div>
+            </div>
+
+            <div class="reward-box">
+                <strong>🎁 이벤트 혜택</strong><br>
+                작성 후 보여주시면<br>
+                주류 / 음료 / 후식냉면 중 택 1 서비스!
+            </div>
+
+            <img src="puppy.jpg" alt="귀여운 강아지" class="footer-img">
+        </div>
+    </div>
+
 </body>
 </html>
